@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0eff4;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+}
+
+textarea {
+    max-width: 100%;
+    min-width: 100%;
+    font-family: 'Roboto', sans-serif;
+}

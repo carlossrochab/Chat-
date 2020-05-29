@@ -1,0 +1,75 @@
+.chat {
+    width: 420px;
+    max-width: 420px;
+
+    // header
+    &__header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background-color: $color-primary;
+        padding: $chat-padding;
+        border-radius: 8px 8px 0 0;
+        border-bottom: 5px solid $color-secondary;
+        &__img {
+            max-width: 100%;
+            width: 42px;
+            border: 2px solid #85dc7a;
+            border-radius: 50%;
+            margin-right: 1rem
+        }
+    }
+    &__name {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    &__userStatus {
+        color: #fff;
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    &__box {
+        // styles for chat box
+    }
+
+    // footer
+    &__footer {
+        position: relative;
+        padding: $chat-padding ($chat-padding * 2.5);
+        background-color: $color-primary;
+        border-radius: 0 0 8px 8px;
+        border-top: 5px solid $color-secondary;
+        .chat {
+            &__textareaWrapper {
+                position: relative;
+            }
+            &__textarea {
+                width: 100%;
+                position: relative;
+                padding: 2px 12px;
+                border-radius: 8px;
+                outline: none;
+                font-size: .75rem;
+                font-weight: 400;
+                color: #555;
+                resize: none;
+            }
+            &__btn-send {
+                position: absolute;
+                top: 8px;
+                right: 10px;
+            }
+        }
+    }
+    &__copyright {
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 6px;
+        a {
+            color:$color-secondary;
+        }
+    }
+}
