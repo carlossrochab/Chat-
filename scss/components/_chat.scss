@@ -51,9 +51,9 @@
         border-radius: 12px 0 12px 12px;
         margin-bottom: 16px;
         padding: 12px;
+        max-width: 60%;
     }
     &__msgYou {
-        max-width: 100%;
         width: fit-content;
         color: #fff;
         font-size: 14px;
@@ -67,9 +67,9 @@
         border-radius: 0 12px 12px 12px;
         margin-bottom: 16px;
         padding: 12px;
+        max-width: 60%;
     }
     &__msgSelf {
-        max-width: 100%;
         width: fit-content;
         color: #fff;
         font-size: 14px; 
@@ -108,6 +108,18 @@
                 border: none;
                 background: transparent;
                 cursor: pointer;
+                color: $color-primary;
+                    &:focus {
+                        outline: none;
+                        
+                    }
+                        &:active {
+                            transform: scale(.96);
+                            
+                        }
+                            &:hover {
+                                color: $color-secondary
+                            }
             }
         }
     }

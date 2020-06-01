@@ -65,9 +65,9 @@ textarea {
     word-break: break-word;
     border-radius: 12px 0 12px 12px;
     margin-bottom: 16px;
-    padding: 12px; }
+    padding: 12px;
+    max-width: 60%; }
   .chat__msgYou {
-    max-width: 100%;
     width: fit-content;
     color: #fff;
     font-size: 14px; }
@@ -78,9 +78,9 @@ textarea {
     word-break: break-word;
     border-radius: 0 12px 12px 12px;
     margin-bottom: 16px;
-    padding: 12px; }
+    padding: 12px;
+    max-width: 60%; }
   .chat__msgSelf {
-    max-width: 100%;
     width: fit-content;
     color: #fff;
     font-size: 14px; }
@@ -112,7 +112,14 @@ textarea {
       border-radius: 8px;
       border: none;
       background: transparent;
-      cursor: pointer; }
+      cursor: pointer;
+      color: #153243; }
+      .chat__footer .chat__btn-send:focus {
+        outline: none; }
+      .chat__footer .chat__btn-send:active {
+        transform: scale(0.96); }
+      .chat__footer .chat__btn-send:hover {
+        color: #e55b7c; }
   .chat__copyright {
     color: #fff;
     font-size: 12px;
