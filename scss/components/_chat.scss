@@ -40,39 +40,31 @@
     }
     &__msgList {
         display: flex;
-        padding: 2rem;
+        padding: $chat-padding;
         flex-direction: column;
     }
-    &__msgListYou {
-        align-self: flex-end;
-        background-color: $color-primary;
+    &__msg {
+        background-color: white;
         list-style: none;
         word-break: break-word;
-        border-radius: 12px 0 12px 12px;
-        margin-bottom: 16px;
-        padding: 12px;
-        max-width: 60%;
-    }
-    &__msgYou {
-        width: fit-content;
+        padding: $chat-msg-padding;
+        max-width: 75%;
         color: #fff;
         font-size: 14px;
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
 
-    }
-    &__msgListSelf {
-        align-self: flex-start;
-        background-color: $color-secondary;
-        list-style: none;
-        word-break: break-word;
-        border-radius: 0 12px 12px 12px;
-        margin-bottom: 16px;
-        padding: 12px;
-        max-width: 60%;
-    }
-    &__msgSelf {
-        width: fit-content;
-        color: #fff;
-        font-size: 14px; 
+        &.chat__msg--left {
+            align-self: flex-start;
+            background-color: $color-primary;
+            border-radius: 0 12px 12px 12px;
+        }
+        &.chat__msg--right {
+            align-self: flex-end;
+            background-color: $color-secondary;
+            border-radius: 12px 0 12px 12px;
+        }
     }
 
     // footer
@@ -87,39 +79,51 @@
                 position: relative;
             }
             &__textarea {
+                display: block;
                 width: 100%;
                 position: relative;
-                padding: 2px 12px;
+                padding: 8px calc(50px + 12px) 8px 12px;
                 border-radius: 8px;
                 outline: none;
                 font-size: .75rem;
                 font-weight: 400;
-                color: #555;
+                color: $body-color;
                 resize: none;
+                border: none;
+                &::placeholder {
+                    color: lighten($body-color, 30%)
+                }
             }
             &__btn-send {
                 position: absolute;
                 top: 0px;
                 right: 0px;
+                bottom: 0;
                 padding: 0px;
                 width: 50px;
-                height: 49px;
-                border-radius: 8px;
+                border-radius: 0 8px 8px 0;
                 border: none;
-                background: transparent;
+                font-size: 1.25rem;
+                background: rgba(darkblue, .1);
                 cursor: pointer;
                 color: $color-primary;
-                    &:focus {
-                        outline: none;
-                        
+
+                &:hover {
+                    color: $color-secondary;
+                    background-color: rgba($color-secondary, .15);
+                }
+                &:active {
+                    color: $color-secondary;
+                    background-color: rgba($color-secondary, .20);
+                    svg {
+                        transform: scale(.85);
                     }
-                        &:active {
-                            transform: scale(.96);
-                            
-                        }
-                            &:hover {
-                                color: $color-secondary
-                            }
+                }
+                &:focus {
+                    outline: none;
+                    color: $color-secondary;
+                    background-color: rgba($color-secondary, .20);
+                }
             }
         }
     }
@@ -142,4 +146,4 @@
 .nice-scroll::-webkit-scrollbar-thumb {
     background-color: #ced0d4;
     border-radius: 3px;
-  }
+}
